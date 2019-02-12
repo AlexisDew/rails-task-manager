@@ -1,0 +1,17 @@
+<h1>My Tasks</h1>
+
+
+<ul class="list-group">
+  <% @tasks.each do |task| %>
+      <li class="list-group-item">
+        <% task.completed ? checked = "checked" : checked = "" %>
+        <input type="checkbox" value="completed" <%= checked %>>
+        <%= link_to task.title , task_path(task)  %>
+      </li>
+  <% end %>
+</ul>
+
+<hr>
+<%= link_to tasks_new_path do %>
+  <i class="fas fa-plus"></i> Add a new Task
+<% end %>

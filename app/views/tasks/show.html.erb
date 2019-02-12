@@ -1,0 +1,23 @@
+<h1><%= @task.title %></h1>
+
+<div class="group">
+  <div class="breadcrumb">
+    <p class="breadcrumb-item active"><%= @task.details %></p>
+  </div>
+  <p>
+    <% if @task.completed == true then  %>
+      <% checked = "checked"%>
+      <% message = "This task is completed" %>
+    <% else %>
+      <% checked = ""%>
+      <% message = "This task is not completed yet" %>
+    <% end %>
+    <input type="checkbox" value="completed" <%= checked %>>
+    <%= message %>
+  </p>
+
+  <hr>
+  <%= link_to tasks_path do %>
+    <i class="fas fa-undo"></i> Back to List
+  <% end %>
+</div>
