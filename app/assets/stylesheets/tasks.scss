@@ -1,3 +1,30 @@
 // Place all the styles related to the tasks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#edit-btn {
+  position: absolute;
+  top: 8px;
+  right: 0px;
+}
+
+#edit-btn a:hover {
+  text-decoration: none;
+}
+
+#delete {
+  color: #990000;
+  text-decoration: none;
+}
+
+
+.task-header {
+  position: relative;
+  display: flex;
+  min-height: 60px;
+}
+
+#details {
+  // margin-top: 20px;
+  min-height: 100px;
+}

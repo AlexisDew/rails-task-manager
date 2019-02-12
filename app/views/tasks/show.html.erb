@@ -1,7 +1,14 @@
-<h1><%= @task.title %></h1>
+<div class="task-header">
+  <h1><%= @task.title %></h1>
+  <button type="button" class="btn btn-light" id="edit-btn">
+    <%= link_to edit_task_path(@task) do %>
+    <i class="fas fa-pen"></i> Edit this Task
+    <% end %>
+  </button>
+</div>
 
 <div class="group">
-  <div class="breadcrumb">
+  <div class="breadcrumb" id="details">
     <p class="breadcrumb-item active"><%= @task.details %></p>
   </div>
   <p>
@@ -15,6 +22,7 @@
     <input type="checkbox" value="completed" <%= checked %>>
     <%= message %>
   </p>
+
 
   <hr>
   <%= link_to tasks_path do %>

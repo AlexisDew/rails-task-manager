@@ -5,8 +5,14 @@
   <% @tasks.each do |task| %>
       <li class="list-group-item">
         <% task.completed ? checked = "checked" : checked = "" %>
-        <input type="checkbox" value="completed" <%= checked %>>
-        <%= link_to task.title , task_path(task)  %>
+        <%= link_to task_path(task), method: :delete, data: { confirm: "Are you sure?" } do %>
+          <i class="fas fa-trash-alt" id="delete">  </i>
+
+
+        <% end %>
+
+        &nbsp <input type="checkbox" value="completed" <%= checked %>>
+        &nbsp <%= link_to task.title , task_path(task)  %>
       </li>
   <% end %>
 </ul>
